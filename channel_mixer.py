@@ -7,6 +7,20 @@ from tkinter.filedialog import askopenfilename
 import argparse
 
 def merge_channels(size:int, routes, save_filename):
+    """
+    Merges channels of images into a single RGBA image and saves it as a PNG file.
+
+    Args:
+        size (int): The size of the output image.
+        routes (List[str]): A list of file routes to the input images for each channel. If a route is empty, a white image will be used for that channel.
+        save_filename (str): The filename of the output image.
+
+    Returns:
+        None
+
+    Raises:
+        FileNotFoundError: If any of the input image files cannot be found.
+    """
 
     images = []
 
@@ -23,6 +37,15 @@ def merge_channels(size:int, routes, save_filename):
 
 class App():
     def __init__(self, window) -> None:
+        """
+        Initializes the TextureChannelMixer class.
+
+        Args:
+            window: The main window object.
+
+        Returns:
+            None.
+        """
         self.win = window
         self.win.config(width=800, height=600)
         self.win.title('Texture channel mixer')

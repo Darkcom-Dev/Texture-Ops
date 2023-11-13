@@ -7,6 +7,28 @@ from tkinter.filedialog import askopenfilename
 import argparse
 
 def pack_textures(size:int, routes, save_filename):
+    """
+    Generate a packed texture image from a list of image routes.
+
+    Args:
+        size (int): The size of each individual texture image.
+        routes (list): A list of image routes. Each route represents the file path to an image.
+        save_filename (str): The file name under which the packed texture image will be saved.
+
+    Returns:
+        None
+
+    Raises:
+        FileNotFoundError: If any of the image routes provided do not exist.
+
+    Notes:
+        - The packed texture image will have a size of size * 2 by size * 2.
+        - Each individual texture image will be pasted onto the packed texture image at a position determined by the index of the image route in the routes list.
+        - If an image route is an empty string, a blank texture image of size by size will be pasted at the corresponding position on the packed texture image.
+        - The packed texture image will be saved as a PNG file under the provided save_filename.
+        - The packed texture image will be displayed after it is saved.
+
+    """
 
     print('Message from pack textures')
     
@@ -25,6 +47,15 @@ def pack_textures(size:int, routes, save_filename):
 
 class App():
     def __init__(self, window) -> None:
+        """
+        Initializes the class with a window object.
+
+        Parameters:
+            window (object): The window object to be used for the application.
+
+        Returns:
+            None
+        """
 
         self.win = window
         self.win.config(width=800, height=600)
