@@ -58,8 +58,6 @@ def main():
     size_selected.set(256)
     size_options_menu.grid(row=2, column=0, sticky='we')
 
-    button = tk.Button(app, text="Hover over me")
-    button.grid(row=2, column=1, sticky='we')
 
 
 
