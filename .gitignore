@@ -5,4 +5,5 @@ dist
 *.png
 *.spec
 *.tiff
+*.pyc
 __pycache__
