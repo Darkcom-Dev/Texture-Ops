@@ -12,3 +12,8 @@ def get_channel_mix(path_r, path_g, path_b, path_a, size):
 
         
     return Image.merge('RGBA', (imr, img, imb, ima))
+
+def get_channel_split(path, size):
+    im = Image.open(path)
+    im = im.resize((size, size))
+    return im.getchannel('R'), im.getchannel('G'), im.getchannel('B'), im.getchannel('A')

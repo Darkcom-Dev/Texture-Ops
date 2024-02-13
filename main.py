@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import filedialog as fd
 import channel_mixer_top as cmt
+import channel_splitter_top as cst
 import flowmap_top as ft
 import atlas_top as att
 from common_widgets import TexturePreview
@@ -36,6 +37,7 @@ def main():
     menu_app.add_command(label='Channel Mixer', command=lambda: cmt.Channel_Mixer_Top(app, texture_A.path_entry.get(), texture_B.path_entry.get(), texture_C.path_entry.get(), texture_D.path_entry.get(), size_selected.get()))
     menu_app.add_command(label='Atlas Texture', command=lambda: att.Atlas_Texture_Top(app, texture_A.path_entry.get(), texture_B.path_entry.get(), texture_C.path_entry.get(), texture_D.path_entry.get(), size_selected.get()))
     menu_app.add_command(label='Flowmap', command=lambda: ft.Flowmap_Top(app, texture_A.path_entry.get(), size_selected.get()))
+    menu_app.add_command(label='Channel_Splitter', command=lambda: cst.Channel_Splitter(app, texture_A.path_entry.get(), size_selected.get()))
     menu_app['background'] = '#1E1E1E'
     menu_app['foreground'] = 'white'
 
