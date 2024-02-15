@@ -1,5 +1,5 @@
 import tkinter as tk
-from PIL import Image, ImageTk
+from PIL import Image
 import normalmap as nm
 from common_widgets import SaveTexture
 

@@ -1,7 +1,4 @@
 import tkinter as tk
-from tkinter import filedialog as fd
-from tkinter import messagebox
-from PIL import Image, ImageTk
 from channel_mixer import get_channel_mix
 from common_widgets import SaveTexture
 

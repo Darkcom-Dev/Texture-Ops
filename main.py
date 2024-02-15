@@ -6,6 +6,7 @@ import flowmap_top as ft
 import atlas_top as att
 import normalmap_top as nmt
 import normalmap_greyscale_top as ngt
+import about_top as at
 from common_widgets import TexturePreview
 
 class SingletonCommand:
@@ -32,7 +33,7 @@ def main():
     menu_app = tk.Menu(menu)
     menu_help = tk.Menu(menu)
     menu.add_cascade(label='App', menu=menu_app)
-    menu.add_cascade(label='Help', menu=menu_help)
+    menu.add_command(label='Help', command=lambda: at.About_Top(app))
     menu_help.add_command(label='About')
     menu_help['background'] = '#1E1E1E'
     menu_help['foreground'] = 'white'

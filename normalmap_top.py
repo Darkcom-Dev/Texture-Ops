@@ -1,7 +1,5 @@
 import tkinter as tk
-from tkinter import filedialog as fd
-from tkinter import messagebox
-from PIL import Image, ImageTk
+from PIL import Image
 import normalmap as nm
 from common_widgets import SaveTexture
 

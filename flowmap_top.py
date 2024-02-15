@@ -1,7 +1,4 @@
 import tkinter as tk
-from tkinter import filedialog as fd
-from tkinter import messagebox
-from PIL import Image, ImageTk
 from flowmap import get_flowmap
 from common_widgets import SaveTexture
 
@@ -19,7 +16,6 @@ class Flowmap_Top(tk.Toplevel):
         self.path = path
         self.im = get_flowmap(self.path)
         self.im_preview = self.im.resize((256, 256))
-        self.imtk = ImageTk.PhotoImage(self.im_preview)
 
         self.save_widget = SaveTexture(self, 'Flowmap', 'Save', self.im_preview, self.im, size_selected)
         self.save_widget.grid(row=6, column=0, columnspan=3, sticky='we')
