@@ -4,6 +4,8 @@ import channel_mixer_top as cmt
 import channel_splitter_top as cst
 import flowmap_top as ft
 import atlas_top as att
+import normalmap_top as nmt
+import normalmap_greyscale_top as ngt
 from common_widgets import TexturePreview
 
 class SingletonCommand:
@@ -38,6 +40,8 @@ def main():
     menu_app.add_command(label='Atlas Texture', command=lambda: att.Atlas_Texture_Top(app, texture_A.path_entry.get(), texture_B.path_entry.get(), texture_C.path_entry.get(), texture_D.path_entry.get(), size_selected.get()))
     menu_app.add_command(label='Flowmap', command=lambda: ft.Flowmap_Top(app, texture_A.path_entry.get(), size_selected.get()))
     menu_app.add_command(label='Channel_Splitter', command=lambda: cst.Channel_Splitter(app, texture_A.path_entry.get(), size_selected.get()))
+    menu_app.add_command(label='Normalmap', command=lambda: nmt.Normalmap_Top(app, texture_A.path_entry.get(), size_selected.get()))
+    menu_app.add_command(label='Normalmap_Greyscale', command=lambda: ngt.Normalmap_Greyscale_Top(app, texture_A.path_entry.get(), size_selected.get()))
     menu_app['background'] = '#1E1E1E'
     menu_app['foreground'] = 'white'
 
