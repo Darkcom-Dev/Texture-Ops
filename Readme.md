@@ -2,6 +2,10 @@
 
 Created for realize various operation over textures *.png for optimize videogames projects or 3D models.
 
+## How to use
+
+Clone the repository, and execute `python3 main.py`
+
 ## Improvments
 
 - Added support for Image Preview.
@@ -14,14 +18,17 @@ Created for realize various operation over textures *.png for optimize videogame
 ## To Do
 
 - Create ocean flowmap generator.
-- Create Help Top level
+- Create Help Top level (partially created)
+- Create manual of application use.
 
 ## Fixes
 
 - Error in load textures from file dialog
 - Unscaled normal textures in preview
 - Standarize Save Texture Widget in all tops
-  
+- get_channel_split manage missed channels with white channel
+- get_atlas manage missing textures adding alpha textures
+
 ## Know issue
 
-- get_channel_split must be manage missed channels
+- 
