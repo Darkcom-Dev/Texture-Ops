@@ -7,6 +7,7 @@ import atlas_top as att
 import normalmap_top as nmt
 import normalmap_greyscale_top as ngt
 import about_top as at
+import simplex_top as st
 from common_widgets import TexturePreview
 
 class SingletonCommand:
@@ -32,11 +33,16 @@ def main():
     menu['foreground'] = 'white'
     menu_app = tk.Menu(menu)
     menu_help = tk.Menu(menu)
+    menu_generate = tk.Menu(menu)
     menu.add_cascade(label='App', menu=menu_app)
     menu.add_command(label='Help', command=lambda: at.About_Top(app))
+    menu.add_cascade(label='Generate', menu=menu_generate)
+    # ------------------------------------------------------------------
     menu_help.add_command(label='About')
     menu_help['background'] = '#1E1E1E'
     menu_help['foreground'] = 'white'
+    # ------------------------------------------------------------------
+
     menu_app.add_command(label='Channel Mixer', command=lambda: cmt.Channel_Mixer_Top(app, texture_A.path_entry.get(), texture_B.path_entry.get(), texture_C.path_entry.get(), texture_D.path_entry.get(), size_selected.get()))
     menu_app.add_command(label='Atlas Texture', command=lambda: att.Atlas_Texture_Top(app, texture_A.path_entry.get(), texture_B.path_entry.get(), texture_C.path_entry.get(), texture_D.path_entry.get(), size_selected.get()))
     menu_app.add_command(label='Flowmap', command=lambda: ft.Flowmap_Top(app, texture_A.path_entry.get(), size_selected.get()))
@@ -45,6 +51,11 @@ def main():
     menu_app.add_command(label='Normalmap_Greyscale', command=lambda: ngt.Normalmap_Greyscale_Top(app, texture_A.path_entry.get(), size_selected.get()))
     menu_app['background'] = '#1E1E1E'
     menu_app['foreground'] = 'white'
+    # ------------------------------------------------------------------
+    menu_generate['background'] = '#1E1E1E'
+    menu_generate['foreground'] = 'white'
+    menu_generate.add_command(label='SimplexNoise', command=lambda: st.Simplex_Top(app, size_selected.get()))
+
 
 
     texture_A = TexturePreview(app, 'Texture A', 240)

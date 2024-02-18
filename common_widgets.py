@@ -75,5 +75,8 @@ class SaveTexture(tk.LabelFrame):
         else:
             showinfo("Error", "Error al guardar imagen. Por favor, selecciona la ruta de guardado.")
 
-    def on_path_entry_change(self, event):
-        pass
+    def on_update(self, im, im_preview, event):
+        self.im = im
+        self.preview = im_preview
+        self.imtk = ImageTk.PhotoImage(im_preview)
+        self.image.configure(image=self.imtk)
