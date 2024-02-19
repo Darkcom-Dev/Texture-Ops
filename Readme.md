@@ -26,11 +26,12 @@ Clone the repository, and execute `python3 main.py`
 
 ## Fixes
 
-- Error in load textures from file dialog
-- Unscaled normal textures in preview
-- Standarize Save Texture Widget in all tops
-- get_channel_split manage missed channels with white channel
-- get_atlas manage missing textures adding alpha textures
+- Added Random seed to White and Worley Noise.
+- Error in load textures from file dialog.
+- Unscaled normal textures in preview.
+- Standarize Save Texture Widget in all tops.
+- get_channel_split manage missed channels with white channel.
+- get_atlas manage missing textures adding alpha textures.
 
 ## Know issue
 

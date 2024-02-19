@@ -1,7 +1,6 @@
 import tkinter as tk
 from common_widgets import SaveTexture
-from PIL import Image, ImageTk
-from simplex_noise import generate_seamless_texture
+from noises import generate_seamless_texture
 
 
 class Simplex_Top(tk.Toplevel):

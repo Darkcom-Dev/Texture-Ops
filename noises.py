@@ -59,7 +59,9 @@ print("Tiempo de ejecución:", end_time - start_time)
  """
 
 
-def generate_worley_noise(width, height, num_points, if_seamless=False):
+def generate_worley_noise(width, height, num_points, if_seamless=False, seed=0):
+
+    np.random.seed(seed)
     # Generar una rejilla de puntos aleatorios
     points = None
     if if_seamless:
@@ -87,12 +89,12 @@ def generate_worley_noise(width, height, num_points, if_seamless=False):
     
     return Image.fromarray(noise_array.astype(np.uint8))
 
-def generate_white_noise(width, height):
+def generate_white_noise(width, height, seed):
     # Generar una textura de ruido wavelet usando numpy u otra biblioteca
     # Esto dependerá de cómo generes el ruido wavelet
     
     # Aquí puedes utilizar tu propia implementación de ruido wavelet o una biblioteca existente
-    
+    np.random.seed(seed)
     # En este ejemplo, simplemente generaremos ruido blanco aleatorio
     noise_array = np.random.rand(height, width) * 255
 
