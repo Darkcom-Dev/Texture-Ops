@@ -8,6 +8,8 @@ import normalmap_top as nmt
 import normalmap_greyscale_top as ngt
 import about_top as at
 import simplex_top as st
+import white_noise_top as wnt
+import worley_noise_top as wot
 from common_widgets import TexturePreview
 
 class SingletonCommand:
@@ -54,7 +56,9 @@ def main():
     # ------------------------------------------------------------------
     menu_generate['background'] = '#1E1E1E'
     menu_generate['foreground'] = 'white'
-    menu_generate.add_command(label='SimplexNoise', command=lambda: st.Simplex_Top(app, size_selected.get()))
+    menu_generate.add_command(label='Simplex Noise', command=lambda: st.Simplex_Top(app, size_selected.get()))
+    menu_generate.add_command(label='White Noise', command=lambda: wnt.WhiteNoiseTop(app, size_selected.get()))
+    menu_generate.add_command(label='Worley Noise', command=lambda: wot.WorleyNoiseTop(app, size_selected.get()))
 
 
 

@@ -59,3 +59,42 @@ print("Tiempo de ejecución:", end_time - start_time)
  """
 
 
+def generate_worley_noise(width, height, num_points, if_seamless=False):
+    # Generar una rejilla de puntos aleatorios
+    points = None
+    if if_seamless:
+        defined_points = np.array([[0, 0], [0, 1], [1, 0], [1, 1], [0.5, 0], [0.5, 0.5], [0, 0.5], [1, 0.5], [0.5, 1]]) * np.array([width, height])
+        points = np.random.rand(num_points, 2) * np.array([width, height])
+        points = np.append(points, defined_points, axis=0)
+    # points = defined_points
+    else:
+        points = np.random.rand(num_points, 2) * np.array([width, height])
+    
+    # Crear una matriz para almacenar los valores de ruido
+    noise_array = np.zeros((height, width))
+    
+    # Calcular el ruido para cada píxel
+    for y in range(height):
+        for x in range(width):
+            # Calcular la distancia euclidiana al punto más cercano
+            distances = np.linalg.norm(points - np.array([x, y]), axis=1)
+            
+            # Asignar el valor de ruido basado en la distancia al punto más cercano
+            noise_array[y, x] = np.min(distances)
+    
+    # Normalizar los valores al rango 0-255
+    noise_array = ((noise_array - noise_array.min()) / (noise_array.max() - noise_array.min())) * 255
+    
+    return Image.fromarray(noise_array.astype(np.uint8))
+
+def generate_white_noise(width, height):
+    # Generar una textura de ruido wavelet usando numpy u otra biblioteca
+    # Esto dependerá de cómo generes el ruido wavelet
+    
+    # Aquí puedes utilizar tu propia implementación de ruido wavelet o una biblioteca existente
+    
+    # En este ejemplo, simplemente generaremos ruido blanco aleatorio
+    noise_array = np.random.rand(height, width) * 255
+
+    
+    return Image.fromarray(noise_array.astype(np.uint8))

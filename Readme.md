@@ -14,6 +14,9 @@ Clone the repository, and execute `python3 main.py`
 - Created Channel Splitter in RGBA Textures.
 - Created normal map generator from Gray scale texture.
 - Created Gray scale from Normal map texture.
+- Added Simple Noise Generator
+- Added White Noise Generator
+- Added Worley Noise Generator
 
 ## To Do
 
