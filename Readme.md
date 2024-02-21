@@ -17,12 +17,14 @@ Clone the repository, and execute `python3 main.py`
 - Added Simple Noise Generator
 - Added White Noise Generator
 - Added Worley Noise Generator
+- Added Filters
 
 ## To Do
 
 - Create ocean flowmap generator.
 - Create Help Top level (partially created)
 - Create manual of application use.
+- add new support to optional parameters in kernel filter
 
 ## Fixes
 
@@ -32,7 +34,8 @@ Clone the repository, and execute `python3 main.py`
 - Standarize Save Texture Widget in all tops.
 - get_channel_split manage missed channels with white channel.
 - get_atlas manage missing textures adding alpha textures.
+- Fixed enabled and disabled menu commands
 
 ## Know issue
 
-- 
+- fix table in Color3DLUT

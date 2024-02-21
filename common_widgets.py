@@ -2,11 +2,13 @@ import tkinter as tk
 from PIL import Image, ImageTk
 from tkinter import filedialog as fd
 from tkinter.messagebox import showinfo
+import os
 
 class TexturePreview(tk.LabelFrame):
     def __init__(self, app, text, im_size):
         super().__init__(app, text=text)
 
+        self.is_valid_file = tk.BooleanVar(value=False)
         self.im_size = im_size
 
         self.im = Image.new('RGBA', (self.im_size, self.im_size), (0, 0, 0, 0))
@@ -33,6 +35,12 @@ class TexturePreview(tk.LabelFrame):
         self.imtk = ImageTk.PhotoImage(self.im)
         self.preview.configure(image=self.imtk)
 
+    def blank_image(self):
+        self.im = Image.new('RGBA', (self.im_size, self.im_size), (0, 0, 0, 0))
+        self.im = self.im.resize((self.im_size, self.im_size))
+        self.imtk = ImageTk.PhotoImage(self.im)
+        self.preview.configure(image=self.imtk)
+
     def load_path(self):
         # -defaultextension, -filetypes, -initialdir, -initialfile, -multiple, -parent, -title, or -typevariable
         path = fd.askopenfilename(filetypes=[("PNG Files", "*.png"),("Texture Files", "*.tiff"), ("All Files", "*.*")])
@@ -41,16 +49,19 @@ class TexturePreview(tk.LabelFrame):
             self.path_entry.insert(0, path)
         else:
             showinfo("Error", "Error al cargar la imagen")
+        
 
     def on_path_entry_change(self, event):
 
         try :
-            self.im = Image.open(self.path_entry.get())
-            self.im = self.im.resize((self.im_size, self.im_size))
-            self.imtk = ImageTk.PhotoImage(self.im)
-            self.preview.configure(image=self.imtk)
+            self.load_image()
+            self.is_valid_file.set(os.path.isfile(self.path_entry.get()))
+            print('Is valid file', self.is_valid_file,self.is_valid_file.get())
         except Exception as e:
+            self.is_valid_file.set(False)
+            self.blank_image()
             print(e)
+
 
 class SaveTexture(tk.LabelFrame):
     def __init__(self, app, text, button_text, im_preview, im, size_selected):

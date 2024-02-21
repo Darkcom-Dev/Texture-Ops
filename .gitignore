@@ -1,6 +1,7 @@
 venv
 build
 dist
+trash
 *.jpg
 *.png
 *.spec
