@@ -6,5 +6,6 @@ trash
 *.png
 *.spec
 *.tiff
+*.webp
 *.pyc
 __pycache__

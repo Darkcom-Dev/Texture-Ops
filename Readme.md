@@ -6,6 +6,7 @@ Created for realize various operation over textures *.png for optimize videogame
 
 1. Open the terminal.
 2. Clone the repository `git clone 'https://github.com/Darkcom-Dev/Texture-Ops.git'` 
+3. Open the repository folder with `cd Texture-Ops`
 3. Install deendencias with `pip install -r requeriments.txt`
 4. and execute `python3 main.py`
 
