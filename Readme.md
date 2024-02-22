@@ -4,7 +4,10 @@ Created for realize various operation over textures *.png for optimize videogame
 
 ## How to use
 
-Clone the repository, and execute `python3 main.py`
+1. Open the terminal.
+2. Clone the repository `git clone 'https://github.com/Darkcom-Dev/Texture-Ops.git'` 
+3. Install deendencias with `pip install -r requeriments.txt`
+4. and execute `python3 main.py`
 
 ## Improvments
 
@@ -32,10 +35,11 @@ Clone the repository, and execute `python3 main.py`
 - Error in load textures from file dialog.
 - Unscaled normal textures in preview.
 - Standarize Save Texture Widget in all tops.
-- get_channel_split manage missed channels with white channel.
-- get_atlas manage missing textures adding alpha textures.
+- `get_channel_split` manage missed channels with white channel.
+- `get_atlas` manage missing textures adding alpha textures.
 - Fixed enabled and disabled menu commands
 
 ## Know issue
 
 - fix table in Color3DLUT
+- error when channel splitter load an image RGB without channel Alpha

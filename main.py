@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import ttk
 from tkinter import filedialog as fd
 import channel_mixer_top as cmt
 import channel_splitter_top as cst
@@ -45,6 +46,7 @@ def main():
     app.title ('Texture utils')
     app.geometry('512x700')
     app.resizable(False, False)
+    style = ttk.Style()
 
     menu = tk.Menu(app)
     app.config(menu=menu)
@@ -91,7 +93,8 @@ def main():
     menu_filters.add_command(label='Statistics Filter', command=lambda: soft.StatisticsOperationsFilterTop(app, texture_A.path_entry.get(), size_selected.get()))
     menu_filters.add_command(label='Color3DLUT', command=lambda: c3lt.Color3DLUTTop(app, texture_A.path_entry.get(), size_selected.get()))
     menu_filters.entryconfig('Color3DLUT', state='disabled')
-
+    # -----------------------------------------------------------------
+    
     disable_menu_commands(False, [menu_app, menu_filters])
 
     texture_A = TexturePreview(app, 'Texture A', 240)
