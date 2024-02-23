@@ -22,6 +22,7 @@ Created for realize various operation over textures *.png for optimize videogame
 - Added White Noise Generator
 - Added Worley Noise Generator
 - Added Filters
+- Added Mandelbrot, Gaussian Noise and Gradient
 
 ## To Do
 

@@ -8,9 +8,14 @@ import atlas_top as att
 import normalmap_top as nmt
 import normalmap_greyscale_top as ngt
 import about_top as at
+
 import simplex_top as st
 import white_noise_top as wnt
 import worley_noise_top as wot
+import mandelbrot_top as mbt
+import gaussian_noise_top as gnt
+import gradient_top as gt
+
 import default_filters_top as dft
 import blur_top as bt
 
@@ -81,6 +86,9 @@ def main():
     menu_generate.add_command(label='Simplex Noise', command=lambda: st.Simplex_Top(app, size_selected.get()))
     menu_generate.add_command(label='White Noise', command=lambda: wnt.WhiteNoiseTop(app, size_selected.get()))
     menu_generate.add_command(label='Worley Noise', command=lambda: wot.WorleyNoiseTop(app, size_selected.get()))
+    menu_generate.add_command(label='Mandelbrot', command=lambda: mbt.MandelbrotTop(app, size_selected.get()))
+    menu_generate.add_command(label='Gaussian Noise', command=lambda: gnt.GaussinaNoiseTop(app, size_selected.get()))
+    menu_generate.add_command(label='Gradient', command=lambda: gt.GradientTop(app, size_selected.get()))
     # ------------------------------------------------------------------
     menu_filters['background'] = '#1E1E1E'
     menu_filters['foreground'] = 'white'
